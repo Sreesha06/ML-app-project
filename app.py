@@ -5,8 +5,6 @@ Hackathon: TANCAM Women's Hackathon
 """
 
 import streamlit as st
-import tensorflow as tf
-from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 import json
