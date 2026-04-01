@@ -198,3 +198,12 @@ if __name__ == "__main__":
     print("   2. Organize as: data/train/<disease>/ and data/val/<disease>/")
     print("   3. Run: train_generators = model_builder.create_data_generators('data/train', 'data/val')")
     print("   4. Run: model_builder.train(train_gen, val_gen)")
+if __name__ == "__main__":
+    model_builder = CropDiseaseModel(num_classes=len(DISEASE_CLASSES))
+    model = model_builder.build_model()
+
+    train_gen, val_gen = model_builder.create_data_generators('data/train', 'data/val')
+
+    model_builder.train(train_gen, val_gen)
+
+    model_builder.save_model("model.h5")
